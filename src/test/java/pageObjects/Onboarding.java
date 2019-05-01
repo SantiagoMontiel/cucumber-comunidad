@@ -1,4 +1,4 @@
 package pageObjects;
 
-public class Onboarding extends PageBase{
+public class Onboarding {
 }

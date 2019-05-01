@@ -22,17 +22,13 @@ public class Hooks {
     @Before
     public void setUp(){
         pageLogin = new Login();
-        navigator = pageLogin.getNavigator();
+        navigator = new Navigation();
     }
 
     @After
-    public void closeBrowser(){
-        navigator.close();
-    }
-
-    @After
-    public void takeScreenshot(Scenario scenario) {
+    public void done(Scenario scenario){
         navigator.takeScreenshot(scenario);
+        navigator.close();
     }
 
 }

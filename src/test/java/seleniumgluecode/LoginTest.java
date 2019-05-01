@@ -12,20 +12,21 @@ public class LoginTest{
     Login pageLogin = Hooks.getPageLogin();
     Navigation navigator = Hooks.getNavigator();
 
-    @Given("^El usuario se encuentra en la pagina de ingreso de cuit$")
-    public void el_usuario_se_encuentra_en_la_pagina_de_ingreso_de_cuit() throws Throwable {
+
+    @Given("^El usuario se encuentra en la pagina de login$")
+    public void el_usuario_se_encuentra_en_la_pagina_de_login() throws Throwable {
         navigator.navigate(pageLogin.getUrl());
+        sleep(1000);
     }
 
     @When("^El usuario ingresa \"([^\"]*)\"$")
-    public void el_usuario_ingresa(String cuit) throws Throwable {
-        navigator.complete(pageLogin.getFieldCuit(), cuit);
+    public void el_usuario_ingresa(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
     }
 
-    @When("^Hace click en Enviar$")
-    public void hace_click_en_Enviar() throws Throwable {
-        navigator.click(pageLogin.getButtonEnviar());
-        sleep(2000);
+    @When("^Hace click en Login$")
+    public void hace_click_en_Login() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
     }
 
     @Then("^Se muestra el Onboarding del usuario logueado$")

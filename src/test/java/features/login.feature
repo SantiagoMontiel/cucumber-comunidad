@@ -18,20 +18,17 @@
 ## (Comments)
 #Sample Feature Definition Template
 
-@login @slow
+@login
 Feature: Login
-  Verificar que el usuario se puede loguear correctamente en el sitio
-
-#  Background:
-#    Given El usuario se encuentra en la pagina de ingreso de cuit
+  Description: Como usuario quiero poderme loguear en el sitio con mi usuario y password
 
   @exitoso
-  Scenario Outline: Login con cliente valido
-    Given El usuario se encuentra en la pagina de ingreso de cuit
-    When El usuario ingresa "<cuit>"
-    And Hace click en Enviar
+  Scenario Outline: Login con usuario valido
+    Given El usuario se encuentra en la pagina de login
+    When El usuario ingresa "<usuario>"
+    And Hace click en Login
     Then Se muestra el Onboarding del usuario logueado
 
     Examples:
-      | cuit |
-      | 30500089624 |
+      | usuario | password |
+      | standard_user | secret_sauce |
